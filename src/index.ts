@@ -44,3 +44,21 @@ let employee: {
     console.log(date);
   },
 };
+
+///////////////////////////////////////////////
+// excersise
+let song: {
+  title: string;
+  releaseYear: number;
+} = { title: "My song", releaseYear: 2023 };
+
+let prices = [100, 200, 300];
+
+prices[0] = 7100;
+
+function myFunc(a: number, b: number): number {
+  if (a >= 5 && b < 6) return a * b;
+  return a + b;
+}
+
+myFunc(4, 8);
