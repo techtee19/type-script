@@ -34,3 +34,15 @@ account.deposit(1200);
 //   console.log(typeof account);
 console.log(account instanceof Account);
 console.log(account.balance);
+
+// INDEX SIGNATURES
+class SeatAssignent {
+  // A1, A2, A3, ...
+  // Mosh, John, Mary, ...
+
+  [seatNumner: string]: string;
+}
+
+let seats = new SeatAssignent();
+seats.A1 = "Mosh";
+seats.A2 = "John";
