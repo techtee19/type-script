@@ -1,22 +1,36 @@
 class Account {
-  id: number;
-  owner: string;
-  balance: number;
+  //   readonly id: number;
+  //   owner: string;
+  //   private _balance: number;
+  nickname?: string;
 
-  constructor(id: number, owner: string, balance: number) {
-    this.id = id;
-    this.owner = owner;
-    this.balance = balance;
+  constructor(
+    public readonly id: number,
+    public owner: string,
+    private _balance: number
+  ) {
+    // this.id = id;
+    // this.owner = owner;
+    // this._balance = balance;
   }
 
   deposit(amount: number): void {
     if (amount <= 0) throw new Error("Invalid amount");
-    this.balance += amount;
+    this._balance += amount;
+  }
+
+  get balance(): number {
+    return this._balance;
+  }
+
+  set balance(value: number) {
+    if (value < 0) throw new Error("Invalid value");
+    this._balance = value;
   }
 }
 
 let account = new Account(1, "Tega", 100);
 account.deposit(1200);
-console.log(account.balance);
-console.log(typeof account);
+//   console.log(typeof account);
 console.log(account instanceof Account);
+console.log(account.balance);
