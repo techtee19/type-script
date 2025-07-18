@@ -1,4 +1,5 @@
 "use strict";
+var _a;
 let sales = 123456789;
 let course = "TypeScript Fundamentals";
 let isPublished = true;
@@ -29,13 +30,33 @@ function KgToLbs(weight) {
 }
 KgToLbs(10);
 KgToLbs("10kg");
-let song = { title: "My song", releaseYear: 2023 };
-let prices = [100, 200, 300];
-prices[0] = 7100;
-function myFunc(a, b) {
-    if (a >= 5 && b < 6)
-        return a * b;
-    return a + b;
+let textBox = {
+    drag: () => { },
+    resize: () => { },
+};
+let quantity = 100;
+function greet(name) {
+    if (name)
+        console.log(name.toUpperCase());
+    else
+        console.log("Hola!");
 }
-myFunc(4, 8);
+greet(null);
+greet(undefined);
+function getCustomer(id) {
+    return id === 0 ? null : { birthday: new Date() };
+}
+let customer = getCustomer(0);
+console.log((_a = customer === null || customer === void 0 ? void 0 : customer.birthday) === null || _a === void 0 ? void 0 : _a.getFullYear());
+let speed = null;
+let ride = {};
+const mockDocument = {
+    getElementById: (_id) => ({ value: "mock-value" })
+};
+let phone = mockDocument.getElementById("phone");
+console.log("Phone value:", phone.value);
+function render(document) {
+    if (typeof document === "string")
+        document.toUpperCase();
+}
 //# sourceMappingURL=index.js.map

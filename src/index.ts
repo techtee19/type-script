@@ -111,8 +111,17 @@ let ride = {
 };
 
 // type assertions
-let phone = <HTMLInputElement>document.getElementById("phone");
-phone.value;
+// let phone = <HTMLInputElement>document.getElementById("phone");
+// phone.value;
+
+// Mock document for Node.js environment (learning purposes)
+const mockDocument = {
+  getElementById: (_id: string) => ({ value: "mock-value" })
+};
+
+// Example of type assertion with mock
+let phone = <HTMLInputElement>mockDocument.getElementById("phone");
+console.log("Phone value:", phone.value);
 
 // The unknown type
 function render(document: unknown) {
