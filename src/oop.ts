@@ -138,8 +138,8 @@ class Circle extends Shape {
   }
 }
 
-let shape = new Shape("red");
-shape.render();
+// let shape = new Shape("red");
+// shape.render();
 
 // INTERFACES
 // abstract class Calender {
