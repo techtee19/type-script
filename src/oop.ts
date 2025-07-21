@@ -120,3 +120,25 @@ printNames([
 function printNames(people: Person[]) {
   for (let person of people) console.log(person.fullName);
 }
+
+// ABSTRACT CLASSES AND METHODS
+abstract class Shape {
+  constructor(public color: string) {}
+
+  abstract reneder(): void;
+}
+
+class Circle extends Shape {
+  constructor(public radius: number, color: string) {
+    super(color);
+  }
+
+  override reneder(): void {
+    console.log("Renddering a circle");
+  }
+}
+
+let shape = new Shape("red");
+shape.render();
+
+//
