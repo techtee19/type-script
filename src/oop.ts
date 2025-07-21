@@ -70,3 +70,53 @@ let ride2 = new Ride();
 ride2.start();
 
 console.log(Ride.activeRides);
+
+// INHERITANCE IN OOP
+class Person {
+  constructor(public firstName: string, public lastName: string) {}
+
+  get fullName() {
+    return this.firstName + " " + this.lastName;
+  }
+
+  walk() {
+    console.log("walking");
+  }
+}
+
+class Student extends Person {
+  constructor(public studentId: number, firstName: string, lastName: string) {
+    super(firstName, lastName);
+  }
+
+  takeTest() {
+    console.log("Taking a test");
+  }
+}
+
+// METHOD OVERRIDING
+class Teacher extends Person {
+  override get fullName() {
+    return "Professor" + " " + super.fullName;
+  }
+}
+
+let teacher = new Teacher("John", "Smith");
+console.log(teacher.fullName);
+
+// POLYMORPHISM
+class Principal extends Person {
+  override get fullName() {
+    return "Principal" + " " + super.fullName;
+  }
+}
+
+printNames([
+  new Student(1, "Tega", "Ojo"),
+  new Teacher("Jane", "Doe"),
+  new Principal("Mary", "Smith"),
+]);
+
+function printNames(people: Person[]) {
+  for (let person of people) console.log(person.fullName);
+}

@@ -30,16 +30,61 @@ seats.A1 = "Mosh";
 seats.A2 = "John";
 class Ride {
     start() {
-        Ride.activeRides++;
+        Ride._activeRides++;
     }
     stop() {
-        Ride.activeRides--;
+        Ride._activeRides--;
+    }
+    static get activeRides() {
+        return Ride._activeRides;
     }
 }
-Ride.activeRides = 0;
+Ride._activeRides = 0;
 let ride1 = new Ride();
 ride1.start();
 let ride2 = new Ride();
 ride2.start();
 console.log(Ride.activeRides);
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    get fullName() {
+        return this.firstName + " " + this.lastName;
+    }
+    walk() {
+        console.log("walking");
+    }
+}
+class Student extends Person {
+    constructor(studentId, firstName, lastName) {
+        super(firstName, lastName);
+        this.studentId = studentId;
+    }
+    takeTest() {
+        console.log("Taking a test");
+    }
+}
+class Teacher extends Person {
+    get fullName() {
+        return "Professor" + super.fullName;
+    }
+}
+let teacher = new Teacher("John", "Smith");
+console.log(teacher.fullName);
+class Principal extends Person {
+    get fullName() {
+        return "Principal" + " " + super.fullName;
+    }
+}
+printNames([
+    new Student(1, "Tega", "Ojo"),
+    new Teacher("Jane", "Doe"),
+    new Principal("Mary", "Smith"),
+]);
+function printNames(people) {
+    for (let person of people)
+        console.log(person.fullName);
+}
 //# sourceMappingURL=oop.js.map
