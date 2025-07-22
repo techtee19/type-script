@@ -51,7 +51,7 @@ console.log((_a = customer === null || customer === void 0 ? void 0 : customer.b
 let speed = null;
 let ride = {};
 const mockDocument = {
-    getElementById: (_id) => ({ value: "mock-value" })
+    getElementById: (_id) => ({ value: "mock-value" }),
 };
 let phone = mockDocument.getElementById("phone");
 console.log("Phone value:", phone.value);

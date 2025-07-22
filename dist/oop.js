@@ -45,7 +45,7 @@ ride1.start();
 let ride2 = new Ride();
 ride2.start();
 console.log(Ride.activeRides);
-class Person {
+class Persons {
     constructor(firstName, lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -57,7 +57,7 @@ class Person {
         console.log("walking");
     }
 }
-class Student extends Person {
+class Student extends Persons {
     constructor(studentId, firstName, lastName) {
         super(firstName, lastName);
         this.studentId = studentId;
@@ -66,14 +66,14 @@ class Student extends Person {
         console.log("Taking a test");
     }
 }
-class Teacher extends Person {
+class Teacher extends Persons {
     get fullName() {
-        return "Professor" + super.fullName;
+        return "Professor" + " " + super.fullName;
     }
 }
 let teacher = new Teacher("John", "Smith");
 console.log(teacher.fullName);
-class Principal extends Person {
+class Principal extends Persons {
     get fullName() {
         return "Principal" + " " + super.fullName;
     }
@@ -86,5 +86,30 @@ printNames([
 function printNames(people) {
     for (let person of people)
         console.log(person.fullName);
+}
+class Shape {
+    constructor(color) {
+        this.color = color;
+    }
+}
+class Circle extends Shape {
+    constructor(radius, color) {
+        super(color);
+        this.radius = radius;
+    }
+    reneder() {
+        console.log("Renddering a circle");
+    }
+}
+class GoogleCalendar {
+    constructor(name) {
+        this.name = name;
+    }
+    addEvent() {
+        throw new Error("Method not implemented.");
+    }
+    removeEvent() {
+        throw new Error("Method not implemented.");
+    }
 }
 //# sourceMappingURL=oop.js.map

@@ -51,7 +51,7 @@ function echo<T extends { name: string }>(value: T): T {
 echo({ name: "ada " });
 
 // Extending generic classes
-interface Product {
+interface StoreProduct {
   name: string;
   price: number;
 }
@@ -69,7 +69,7 @@ class Store<T> {
   }
 }
 
-let store = new Store<Product>();
+let store = new Store<StoreProduct>();
 store.add({ name: "a", price: 1 });
 store.find("name", "a");
 store.find("price", 1);
