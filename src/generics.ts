@@ -19,7 +19,7 @@ interface Result<T> {
   error: string | null;
 }
 
-function fetch<T>(url: string): Result<T> {
+function fetch<T>(_url: string): Result<T> {
   return { data: null, error: null };
 }
 
@@ -65,7 +65,7 @@ class Store<T> {
 
   // The key of operator can be used to restrict the type of T
   find(property: keyof T, value: unknown): T | undefined {
-    return this._objects.find((obj) => obj[property] === KeyVAluePair);
+    return this._objects.find((obj) => obj[property] === value);
   }
 }
 
