@@ -89,11 +89,11 @@ greet(null);
 greet(undefined);
 
 // Optional chaining
-type Customer = {
+type Customers = {
   birthday?: Date;
 };
 
-function getCustomer(id: number): Customer | null | undefined {
+function getCustomer(id: number): Customers | null | undefined {
   return id === 0 ? null : { birthday: new Date() };
 }
 
@@ -116,7 +116,7 @@ let ride = {
 
 // Mock document for Node.js environment (learning purposes)
 const mockDocument = {
-  getElementById: (_id: string) => ({ value: "mock-value" })
+  getElementById: (_id: string) => ({ value: "mock-value" }),
 };
 
 // Example of type assertion with mock

@@ -49,3 +49,49 @@ function echo<T extends { name: string }>(value: T): T {
 }
 
 echo({ name: "ada " });
+
+// Extending generic classes
+interface Product {
+  name: string;
+  price: number;
+}
+
+class Store<T> {
+  protected _objects: T[] = [];
+
+  add(obj: T): void {
+    this._objects.push(obj);
+  }
+
+  // The key of operator can be used to restrict the type of T
+  find(property: keyof T, value: unknown): T | undefined {
+    return this._objects.find((obj) => obj[property] === KeyVAluePair);
+  }
+}
+
+let store = new Store<Product>();
+store.add({ name: "a", price: 1 });
+store.find("name", "a");
+store.find("price", 1);
+
+// Pass on the generic type number
+// class CompressibleStore<T> extends Store<T> {
+//   compress() {}
+// }
+
+// Restrict the generic type parameter
+// class SearchableStore<T extends { name: string }> extends Store<T> {
+//   find(name: string): T | undefined {
+//     return this._objects.find((obj) => obj.name === name);
+//   }
+// }
+
+// Fixing/terminating generic type parameter
+// class ProductStore extends Store<Product> {
+//   filterByCategory(category: string): Product[] {
+//     return [];
+//   }
+// }
+
+// let store = new CompressibleStore<Product>();
+// store.compress();
