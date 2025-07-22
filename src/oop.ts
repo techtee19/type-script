@@ -128,7 +128,7 @@ abstract class Shape {
   abstract reneder(): void;
 }
 
-class Circle extends Shape {
+class Circles extends Shape {
   constructor(public radius: number, color: string) {
     super(color);
   }
