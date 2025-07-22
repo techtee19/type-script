@@ -36,3 +36,16 @@ result.data?.username;
 
 let results = fetch<Product>("url");
 results.data?.title;
+
+//  GENERIC CONSTRAINTS
+class Person {
+  constructor(public name: string) {}
+}
+
+class Customer extends Person {}
+
+function echo<T extends { name: string }>(value: T): T {
+  return value;
+}
+
+echo({ name: "ada " });

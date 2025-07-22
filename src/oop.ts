@@ -72,7 +72,7 @@ ride2.start();
 console.log(Ride.activeRides);
 
 // INHERITANCE IN OOP
-class Person {
+class Persons {
   constructor(public firstName: string, public lastName: string) {}
 
   get fullName() {
@@ -84,7 +84,7 @@ class Person {
   }
 }
 
-class Student extends Person {
+class Student extends Persons {
   constructor(public studentId: number, firstName: string, lastName: string) {
     super(firstName, lastName);
   }
@@ -95,7 +95,7 @@ class Student extends Person {
 }
 
 // METHOD OVERRIDING
-class Teacher extends Person {
+class Teacher extends Persons {
   override get fullName() {
     return "Professor" + " " + super.fullName;
   }
@@ -105,7 +105,7 @@ let teacher = new Teacher("John", "Smith");
 console.log(teacher.fullName);
 
 // POLYMORPHISM
-class Principal extends Person {
+class Principal extends Persons {
   override get fullName() {
     return "Principal" + " " + super.fullName;
   }
@@ -117,7 +117,7 @@ printNames([
   new Principal("Mary", "Smith"),
 ]);
 
-function printNames(people: Person[]) {
+function printNames(people: Persons[]) {
   for (let person of people) console.log(person.fullName);
 }
 
